@@ -1,4 +1,4 @@
-//Para que te seleccione cada boton
+//Para que te seleccione cad boton
 
 botones = document.querySelectorAll("button") 
 
@@ -9,6 +9,15 @@ for(let i=0; i< botones.length; i++) {
         parrafo= document.createElement("p")  //creo elemento de tipo parrafo porque pongo p entre parentesis
         elfolio = document.querySelector("#folio") 
         elfolio.appendChild(parrafo)
-        parrafo.innerHTML = origen + ' dice ' + laEntrada.value 
+        if (origen==='Reset'){
+            parrafos = document.querySelectorAll("p")
+            for(let j=0; j<parrafos.length; j++){
+                parrafos[j].remove()
+            }
+        }
+        else {
+            parrafo.innerHTML = `${origen} dice ${laEntrada.value}!!!`
+
+        }
 })
 }
